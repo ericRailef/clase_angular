@@ -1,0 +1,19 @@
+<app-navbar (cambiarVista)="cambiarVista($event)"></app-navbar>
+
+<app-inicio *ngIf="vista === 'inicio'"></app-inicio>
+
+<app-formulario 
+  *ngIf="vista === 'formulario'" 
+  (error)="mostrarError($event)">
+</app-formulario>
+
+<app-modal-error 
+  *ngIf="mensajeError" 
+  [mensaje]="mensajeError"
+  (cerrar)="mensajeError = ''">
+</app-modal-error>
+
+<!-- <app-navbar (cambiarVista)="cambiarVista($event)"></app-navbar>
+
+<app-inicio *ngIf="vista === 'inicio'"></app-inicio>
+<app-formulario *ngIf="vista === 'formulario'"></app-formulario> -->
